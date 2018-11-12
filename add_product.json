@@ -1,0 +1,56 @@
+{
+ "vertices": {
+    "Product": {
+      "id37": {
+      }
+    },
+    "Product": {
+      "id38": {
+      }
+    },
+    "Product": {
+      "id39": {
+      }
+    },
+    "Product": {
+      "id40": {
+      }
+    }
+  },
+  "edges": {
+    "Product":{
+      "62abcax334": {
+        "Liked": {
+          "Product": {
+            "id37" : {
+            }
+          }
+        }
+      },
+      "62abcax334": {
+        "Liked_By": {
+          "Product": {
+            "id38" : {
+            }
+          }
+        }
+      },
+      "62abcax334": {
+        "Liked_By": {
+          "Product": {
+            "id39" : {
+            }
+          }
+        }
+      },
+      "62abcax334": {
+        "Liked_By": {
+          "Product": {
+            "id40" : {
+            }
+          }
+        }
+      }
+    }
+  }
+}

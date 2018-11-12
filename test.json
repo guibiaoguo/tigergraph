@@ -1,0 +1,656 @@
+{
+    "DELETE /graph/delete_by_type/vertices/{vertex_type}/": {
+        "parameters": {
+            "ack": {
+                "default": "all",
+                "max_count": 1,
+                "min_count": 1,
+                "options": [
+                    "all",
+                    "none"
+                ],
+                "type": "STRING"
+            },
+            "permanent": {
+                "default": "false",
+                "max_count": 1,
+                "min_count": 1,
+                "type": "BOOL"
+            },
+            "vertex_type": {
+                "type": "TYPENAME"
+            }
+        }
+    },
+    "DELETE /graph/edges/{source_vertex_type}/{source_vertex_id}/{edge_type}/{target_vertex_type}/{target_vertex_id}": {
+        "parameters": {
+            "edge_type": {
+                "max_count": 1,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "filter": {
+                "max_count": 1,
+                "max_length": 2560,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "limit": {
+                "max_count": 1,
+                "min_count": 0,
+                "type": "UINT64"
+            },
+            "not_wildcard": {
+                "max_count": 1,
+                "min_count": 0,
+                "type": "BOOL"
+            },
+            "permanent": {
+                "default": "false",
+                "max_count": 1,
+                "min_count": 1,
+                "type": "BOOL"
+            },
+            "select": {
+                "max_count": 1,
+                "max_length": 2560,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "sort": {
+                "max_count": 1,
+                "max_length": 2560,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "source_vertex_id": {
+                "id_type": "$source_vertex_type",
+                "is_id": true,
+                "max_count": 1,
+                "max_length": 256,
+                "min_count": 1,
+                "type": "STRING"
+            },
+            "source_vertex_type": {
+                "max_count": 1,
+                "min_count": 1,
+                "type": "TYPENAME"
+            },
+            "target_vertex_id": {
+                "id_type": "$target_vertex_type",
+                "is_id": true,
+                "max_count": 1,
+                "max_length": 256,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "target_vertex_type": {
+                "max_count": 1,
+                "min_count": 0,
+                "type": "TYPENAME"
+            },
+            "timeout": {
+                "default": "0",
+                "max_count": 1,
+                "min_count": 0,
+                "type": "UINT32"
+            }
+        }
+    },
+    "DELETE /graph/vertices/{vertex_type}/{vertex_id}": {
+        "parameters": {
+            "filter": {
+                "max_count": 1,
+                "max_length": 2560,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "limit": {
+                "max_count": 1,
+                "min_count": 0,
+                "type": "UINT64"
+            },
+            "permanent": {
+                "default": "false",
+                "max_count": 1,
+                "min_count": 1,
+                "type": "BOOL"
+            },
+            "sort": {
+                "max_count": 1,
+                "max_length": 2560,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "timeout": {
+                "default": "0",
+                "max_count": 1,
+                "min_count": 0,
+                "type": "UINT32"
+            },
+            "vertex_id": {
+                "id_type": "$vertex_type",
+                "is_id": true,
+                "max_count": 1,
+                "max_length": 2560,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "vertex_type": {
+                "type": "TYPENAME"
+            }
+        }
+    },
+    "GET /echo": {
+        "parameters": {
+            "sleep": {
+                "default": "0",
+                "type": "INT32"
+            }
+        }
+    },
+    "GET /endpoints": {
+        "parameters": {
+            "builtin": {
+                "default": "false",
+                "max_count": 1,
+                "min_count": 0,
+                "type": "BOOL"
+            },
+            "dynamic": {
+                "default": "false",
+                "max_count": 1,
+                "min_count": 0,
+                "type": "BOOL"
+            },
+            "static": {
+                "default": "false",
+                "max_count": 1,
+                "min_count": 0,
+                "type": "BOOL"
+            }
+        }
+    },
+    "GET /graph/edges/{source_vertex_type}/{source_vertex_id}/{edge_type}/{target_vertex_type}/{target_vertex_id}": {
+        "parameters": {
+            "count_only": {
+                "default": "false",
+                "max_count": 1,
+                "min_count": 0,
+                "type": "BOOL"
+            },
+            "edge_type": {
+                "max_count": 1,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "filter": {
+                "max_count": 1,
+                "max_length": 2560,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "limit": {
+                "max_count": 1,
+                "min_count": 0,
+                "type": "UINT64"
+            },
+            "not_wildcard": {
+                "max_count": 1,
+                "min_count": 0,
+                "type": "BOOL"
+            },
+            "select": {
+                "max_count": 1,
+                "max_length": 2560,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "sort": {
+                "max_count": 1,
+                "max_length": 2560,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "source_vertex_id": {
+                "id_type": "$source_vertex_type",
+                "is_id": true,
+                "max_count": 1,
+                "max_length": 256,
+                "min_count": 1,
+                "type": "STRING"
+            },
+            "source_vertex_type": {
+                "max_count": 1,
+                "min_count": 1,
+                "type": "TYPENAME"
+            },
+            "target_vertex_id": {
+                "id_type": "$target_vertex_type",
+                "is_id": true,
+                "max_count": 1,
+                "max_length": 256,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "target_vertex_type": {
+                "max_count": 1,
+                "min_count": 0,
+                "type": "TYPENAME"
+            },
+            "timeout": {
+                "default": "0",
+                "max_count": 1,
+                "min_count": 0,
+                "type": "UINT32"
+            }
+        }
+    },
+    "GET /graph/vertices/{vertex_type}/{vertex_id}": {
+        "parameters": {
+            "count_only": {
+                "default": "false",
+                "max_count": 1,
+                "min_count": 0,
+                "type": "BOOL"
+            },
+            "filter": {
+                "max_count": 1,
+                "max_length": 2560,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "limit": {
+                "max_count": 1,
+                "min_count": 0,
+                "type": "UINT64"
+            },
+            "select": {
+                "max_count": 1,
+                "max_length": 2560,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "sort": {
+                "max_count": 1,
+                "max_length": 2560,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "timeout": {
+                "default": "0",
+                "max_count": 1,
+                "min_count": 0,
+                "type": "UINT32"
+            },
+            "vertex_id": {
+                "id_type": "$vertex_type",
+                "is_id": true,
+                "max_count": 1,
+                "max_length": 2560,
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "vertex_type": {
+                "type": "TYPENAME"
+            }
+        }
+    },
+    "GET /query/namesSimilar": {
+        "action": "query",
+        "function": "queryDispatcher",
+        "parameters": {
+            "firstName": {
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "k": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "lastName": {
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "query": {
+                "default": "namesSimilar",
+                "type": "STRING"
+            },
+            "seed": {
+                "id_type": "NameUser",
+                "is_id": "true",
+                "min_count": 0,
+                "type": "STRING"
+            }
+        },
+        "payload": [
+            {
+                "rule": "AS_QUERY_STRING"
+            }
+        ],
+        "summary": "This is query entrance",
+        "target": "GPE"
+    },
+    "GET /query/productSuggestion": {
+        "action": "query",
+        "function": "queryDispatcher",
+        "parameters": {
+            "k": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "query": {
+                "default": "productSuggestion",
+                "type": "STRING"
+            },
+            "seed": {
+                "id_type": "Product",
+                "is_id": "true",
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "threshold_cnt": {
+                "min_count": 0,
+                "type": "INT64"
+            }
+        },
+        "payload": [
+            {
+                "rule": "AS_QUERY_STRING"
+            }
+        ],
+        "summary": "This is query entrance",
+        "target": "GPE"
+    },
+    "GET /query/socialFromUser": {
+        "action": "query",
+        "function": "queryDispatcher",
+        "parameters": {
+            "is_active": {
+                "min_count": 0,
+                "type": "BOOL"
+            },
+            "k": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "query": {
+                "default": "socialFromUser",
+                "type": "STRING"
+            },
+            "reg_time_max": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "reg_time_min": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "uid": {
+                "id_type": "SocialUser",
+                "is_id": "true",
+                "min_count": 0,
+                "type": "STRING"
+            }
+        },
+        "payload": [
+            {
+                "rule": "AS_QUERY_STRING"
+            }
+        ],
+        "summary": "This is query entrance",
+        "target": "GPE"
+    },
+    "GET /query/socialMutualConnections": {
+        "action": "query",
+        "function": "queryDispatcher",
+        "parameters": {
+            "is_active": {
+                "min_count": 0,
+                "type": "BOOL"
+            },
+            "k": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "query": {
+                "default": "socialMutualConnections",
+                "type": "STRING"
+            },
+            "reg_time_max": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "reg_time_min": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "uid1": {
+                "id_type": "SocialUser",
+                "is_id": "true",
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "uid2": {
+                "id_type": "SocialUser",
+                "is_id": "true",
+                "min_count": 0,
+                "type": "STRING"
+            }
+        },
+        "payload": [
+            {
+                "rule": "AS_QUERY_STRING"
+            }
+        ],
+        "summary": "This is query entrance",
+        "target": "GPE"
+    },
+    "GET /query/socialOneWay": {
+        "action": "query",
+        "function": "queryDispatcher",
+        "parameters": {
+            "mutual_contacts_max": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "mutual_contacts_min": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "query": {
+                "default": "socialOneWay",
+                "type": "STRING"
+            }
+        },
+        "payload": [
+            {
+                "rule": "AS_QUERY_STRING"
+            }
+        ],
+        "summary": "This is query entrance",
+        "target": "GPE"
+    },
+    "GET /query/socialToUser": {
+        "action": "query",
+        "function": "queryDispatcher",
+        "parameters": {
+            "K": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "is_active": {
+                "min_count": 0,
+                "type": "BOOL"
+            },
+            "query": {
+                "default": "socialToUser",
+                "type": "STRING"
+            },
+            "reg_time_max": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "reg_time_min": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "uid": {
+                "id_type": "SocialUser",
+                "is_id": "true",
+                "min_count": 0,
+                "type": "STRING"
+            }
+        },
+        "payload": [
+            {
+                "rule": "AS_QUERY_STRING"
+            }
+        ],
+        "summary": "This is query entrance",
+        "target": "GPE"
+    },
+    "GET /query/topCoLiked": {
+        "action": "query",
+        "function": "queryDispatcher",
+        "parameters": {
+            "input_user": {
+                "id_type": "User",
+                "is_id": "true",
+                "min_count": 0,
+                "type": "STRING"
+            },
+            "query": {
+                "default": "topCoLiked",
+                "type": "STRING"
+            },
+            "topk": {
+                "min_count": 0,
+                "type": "INT64"
+            }
+        },
+        "payload": [
+            {
+                "rule": "AS_QUERY_STRING"
+            }
+        ],
+        "summary": "This is query entrance",
+        "target": "GPE"
+    },
+    "GET /query/videoRecommendation": {
+        "action": "query",
+        "function": "queryDispatcher",
+        "parameters": {
+            "k": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "n": {
+                "min_count": 0,
+                "type": "INT64"
+            },
+            "query": {
+                "default": "videoRecommendation",
+                "type": "STRING"
+            },
+            "seed": {
+                "id_type": "VidUser",
+                "is_id": "true",
+                "min_count": 0,
+                "type": "STRING"
+            }
+        },
+        "payload": [
+            {
+                "rule": "AS_QUERY_STRING"
+            }
+        ],
+        "summary": "This is query entrance",
+        "target": "GPE"
+    },
+    "GET /statistics": {
+        "parameters": {
+            "seconds": {
+                "default": "10",
+                "type": "UINT32"
+            },
+            "segments": {
+                "default": "10",
+                "max": "100",
+                "min": "1",
+                "type": "UINT32"
+            }
+        }
+    },
+    "GET /version": null,
+    "POST /builtins": null,
+    "POST /ddl": {
+        "parameters": {
+            "ack": {
+                "default": "all",
+                "max_count": 1,
+                "min_count": 1,
+                "options": [
+                    "all",
+                    "none"
+                ],
+                "type": "STRING"
+            },
+            "concise": {
+                "default": "false",
+                "max_count": 1,
+                "min_count": 1,
+                "type": "BOOL"
+            },
+            "eol": {
+                "default": "\n",
+                "max_count": 1,
+                "max_length": 4,
+                "min_count": 1,
+                "min_length": 1,
+                "type": "STRING"
+            },
+            "sep": {
+                "default": ",",
+                "max_count": 1,
+                "max_length": 4,
+                "min_count": 0,
+                "min_length": 1,
+                "type": "STRING"
+            },
+            "tag": {
+                "max_count": 1,
+                "min_count": 1,
+                "type": "STRING"
+            },
+            "timeout": {
+                "default": "0",
+                "max_count": 1,
+                "min_count": 0,
+                "type": "UINT32"
+            }
+        }
+    },
+    "POST /echo": {
+        "parameters": {
+            "sleep": {
+                "default": "0",
+                "type": "INT32"
+            }
+        }
+    },
+    "POST /graph": {
+        "parameters": {
+            "ack": {
+                "default": "all",
+                "max_count": 1,
+                "min_count": 1,
+                "options": [
+                    "all",
+                    "none"
+                ],
+                "type": "STRING"
+            }
+        }
+    }
+}
